@@ -84,7 +84,7 @@ const AdminEditVehicleModal = ({
       vehicleName: data.vehicleName,
       vehicleModel: data.vehicleModel,
       trimLevel: data.trimLevel,
-      seatingCapacity: data.seatingCapacity,
+      seatingCapacity: Number(data.seatingCapacity),
       transmission: data.transmission,
       fuelType: data.fuelType,
       milagePerGallon: Number(data.milagePerGallon),
@@ -210,7 +210,7 @@ const AdminEditVehicleModal = ({
 
         <ReusableForm form={form} handleFinish={onSubmit}>
           {/* Step 1: Basic Information */}
-          {step === 1 && <VehicleInformationForm form={form} currentRecord={currentRecord} />}
+          {step === 1 && <VehicleInformationForm currentRecord={currentRecord} />}
 
           {/* Step 2: About the Activity */}
           {step === 2 && <LicenceInformationForm currentRecord={currentRecord} />}
